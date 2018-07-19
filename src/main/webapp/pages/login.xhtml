@@ -7,9 +7,37 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet library="css" name="style-login.css" />
 	<title>Login</title>
 </h:head>
 <h:body>
+
+	<div class="login-page">
+		<div class="form">
+			<h:form class="register-form">
+
+				<p:outputLabel styleClass="inputText" value="Account Login" />
+
+				<p:inputText id="username" value="" required="true" label="username"
+					onfocus="false" styleClass="inputs" />
+				<p:watermark for="username" value="username" id="username_watermark"
+					styleClass="watermark" />
+
+				<p:password id="password" value="" required="true" label="password"
+					styleClass="inputs" />
+				<p:watermark for="password" value="password" id="password_watermark"
+					styleClass="watermark" />
+
+				<p:button value="login" styleClass="button" />
+				<div class="message">
+					<p:outputLabel value="Not registered?" styleClass="message" />
+					<p:commandLink id="ajax">
+						<h:outputText value="Create an account" styleClass="message_a" />
+					</p:commandLink>
+				</div>
+			</h:form>
+		</div>
+	</div>
 
 </h:body>
 </html>
